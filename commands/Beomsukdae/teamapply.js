@@ -79,7 +79,7 @@ module.exports = {
             }).save()
             interaction.reply({content: `2025 범석대 팀 등록이 완료되었습니다.\n팀 이름 : ${option_teamname}\n탑 : ${option_top}\n정글 : ${option_jungle}\n미드 : ${option_mid}\n원딜 : ${option_adc}\n서포터 : ${option_support}`, ephemeral: true})
         } else {
-            await team_Schema.updateOne({
+            await team_Schema.updateOne({userid: interaction.user.id}, {
                 leader: option_leader,
                 teamname: option_teamname,
                 top: option_top,
